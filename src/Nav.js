@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import {ReactComponent as Logo} from './media/Logo1.svg'
+import {ReactComponent as HamburgerIcon} from './media/icon_hamburger_menu.svg'
 function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu =() =>{
+    setMenuOpen(!menuOpen);
+  }
+  
     return (
-        <nav>
-          <Logo id="nav-logo" /> {/* Add a className for styling */}
-          <ul className="nav-list">
+        <nav className={`navbar ${menuOpen ? "open" : ""}`}>
+          <Logo className="nav-logo" alt="Little Lemon Logo" /> {/* Add a className for styling */}
+
+          {/* mobile icon*/}
+          <HamburgerIcon className="mobile-nav-icon" alt="nav menu icon for mobile" onClick={toggleMenu}/>
+          {/* nav items */}
+          <ul className={`nav-list ${menuOpen ? "visible" : ""}`}>
             <li className="nav-list-item"><a href="#home">Home</a></li>
             <li className="nav-list-item"><a href="#about">About</a></li>
             <li className="nav-list-item"><a href="#menu">Menu</a></li>
