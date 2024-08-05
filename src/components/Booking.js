@@ -1,11 +1,9 @@
 import React from 'react';
+import BookingForm from './BookingForm';
 
-function Booking() {
+function Booking(props) {
     return (
-        <div>
-            <h1>Book a Table</h1>
-            <p>Reserve your table at Little Lemon.</p>
-        </div>
+        <BookingForm avaiableTimes={props.avaiableTimes} dispatch={props.dispatch} submitForm={props.Submitform}/>
     );
 }
 

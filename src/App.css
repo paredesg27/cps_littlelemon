@@ -100,7 +100,36 @@ button {
   height: 400px;
   border-radius: 20px;
 }
+form, .comfirm{
+  padding: 10px 13%;
+}
 
+.formField{
+  padding: 50px 20px;
+}
+
+input, label{
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#book-date, #book-time, #book-guests, #book-occasion{
+  background: #bdbdbd43;
+  padding: 8px 24px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.book-form-submit input{
+  padding: 12px 16px;
+  margin-top: 20px;
+  background: #495e57;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+
+}
 /* Media query for mobile view */
 @media (max-width: 768px) {
   .mobile-nav-icon {
@@ -118,9 +147,10 @@ button {
     top: 60px;
     right: 0;
     width: 100%;
-    background-color: #495E57;
+    background-color: #333333;
     align-items: center;
     transition: all 0.3s ease-in-out;
+    z-index: 10000;
   }
 
   .nav-list-item {
@@ -131,5 +161,15 @@ button {
 
   .nav-list-item a {
     color: #fff;
+  }
+  nav ul li a{
+    color: #fff;
+  }
+
+  .header-image{
+    display: none;
+  }
+  .header-section{
+    padding: 10px 8%;
   }
 }
