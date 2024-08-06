@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ReactComponent as Logo } from './media/Logo1.svg'
-import { ReactComponent as HamburgerIcon } from './media/icon_hamburger_menu.svg'
+import { ReactComponent as Logo } from '../media/Logo1.svg'
+import { ReactComponent as HamburgerIcon } from '../media/icon_hamburger_menu.svg'
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 

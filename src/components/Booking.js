@@ -1,9 +1,9 @@
 import React from 'react';
 import BookingForm from './BookingForm';
 
-function Booking(props) {
+const Booking = (props)=> {
     return (
-        <BookingForm avaiableTimes={props.avaiableTimes} dispatch={props.dispatch} submitForm={props.Submitform}/>
+        <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={props.submitForm}/>
     );
 }
 

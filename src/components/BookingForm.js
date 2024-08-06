@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BookingForm() {
+function BookingForm(props) {
     const [date, setDate] = useState("");
     const [times, setTimes] = useState("");
     const [guests, setGuests] = useState("");
@@ -13,7 +13,7 @@ function BookingForm() {
 
     const handleChange = (e) => {
         setDate(e);
-        props.dispatch(e);
+        props.dispatch({ type: 'update', date: e }); 
     }
     return (
         <div>
@@ -29,24 +29,24 @@ function BookingForm() {
 
                         <div>
                             <label htmlFor='book-time'>Choose Time:</label>
-                            <select id='book-time' value={times} onChange={(e) => setTimes(e.target.value)}>
+                            <select id='book-time' value={times} onChange={(e) => setTimes(e.target.value)} required>
                                 <option value="" disabled>Select a Time</option>
-                                {
-                                    props.availableTimes.availableTimes.map(availableTimes => { return <option key={availableTimes}> {availableTimes}</option> })
-                                }
+                                {props.availableTimes && props.availableTimes.map((availableTime, index) => (
+                                    <option key={index} value={availableTime}>{availableTime}</option>
+                                ))}
                             </select>
                         </div>
                         {/**Guests */}
 
                         <div>
                             <label htmlFor='book-guests'>Number of Guests:</label>
-                            <input id='book-guests' min='1' value={guests} onChange={(e) => setGuests(e.target.value)}></input>
+                            <input id='book-guests' type='number' min='1' value={guests} onChange={(e) => setGuests(e.target.value)} required></input>
                         </div>
                         {/** Occasion */}
 
                         <div>
                             <label htmlFor='book-occassion'>Choose an Occasion:</label>
-                            <select id='book-occassion' key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                            <select id='book-occassion' key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
                                 <option>Not Applicable</option>
                                 <option>Anniversary</option>
                                 <option>Birthday</option>

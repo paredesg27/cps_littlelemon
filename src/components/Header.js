@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import HeaderImage from './media/restauranfood.jpg'
+import HeaderImage from '../media/restauranfood.jpg'
 function Header() {
     return (
         <header className="header">
